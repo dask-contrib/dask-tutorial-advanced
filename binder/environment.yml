@@ -1,0 +1,16 @@
+name: dask-tutorial-advanced
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - dask=2023.5.1
+  - python-graphviz
+  - imageio
+  - scipy
+  - matplotlib
+  - pip
+  - pyarrow
+  # JupyterLab + extensions
+  - jupyterlab>=3
+  - dask-labextension
+  - ipywidgets
