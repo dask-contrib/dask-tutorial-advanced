@@ -2,15 +2,16 @@ name: dask-tutorial-advanced
 channels:
   - conda-forge
 dependencies:
-  - python=3.10
-  - dask=2023.5.1
+  - python=3.11
+  - dask=2023.6.1
   - python-graphviz
   - imageio
   - scipy
   - matplotlib
   - pip
   - pyarrow
+  - s3fs
   # JupyterLab + extensions
-  - jupyterlab>=3
+  - jupyterlab>=3,<4
   - dask-labextension
   - ipywidgets
