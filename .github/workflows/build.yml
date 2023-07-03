@@ -1,5 +1,8 @@
 name: Build
-on: [push]
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
 
 jobs:
   binder:
@@ -23,8 +26,12 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Setup Conda Environment
-        uses: conda-incubator/setup-miniconda@v2
+        uses: conda-incubator/setup-miniconda@v2.2.0
         with:
+          miniforge-variant: Mambaforge
+          miniforge-version: latest
+          use-mamba: true
+          channel-priority: strict
           environment-file: binder/environment.yml
           activate-environment: dask-tutorial-advanced
           auto-activate-base: false
