@@ -12,26 +12,30 @@ jobs:
     - name: Build and cache on mybinder.org
       uses: jupyterhub/repo2docker-action@master
       with:
-        NO_PUSH: true
+        DOCKER_REGISTRY: ghcr.io
+        DOCKER_USERNAME: ${{ github.actor }}
+        DOCKER_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
         MYBINDERORG_TAG: ${{ github.event.ref }}
+        IMAGE_NAME: ${{ github.repository }}
+        PUBLIC_REGISTRY_CHECK: true
 
-  conda-solve:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [windows-latest, ubuntu-latest, macos-latest]
+  # conda-solve:
+  #   runs-on: ${{ matrix.os }}
+  #   strategy:
+  #     matrix:
+  #       os: [windows-latest, ubuntu-latest, macos-latest]
 
-    steps:
-      - name: Checkout source
-        uses: actions/checkout@v2
+  #   steps:
+  #     - name: Checkout source
+  #       uses: actions/checkout@v2
 
-      - name: Setup Conda Environment
-        uses: conda-incubator/setup-miniconda@v2.2.0
-        with:
-          miniforge-variant: Mambaforge
-          miniforge-version: latest
-          use-mamba: true
-          channel-priority: strict
-          environment-file: binder/environment.yml
-          activate-environment: dask-tutorial-advanced
-          auto-activate-base: false
+  #     - name: Setup Conda Environment
+  #       uses: conda-incubator/setup-miniconda@v2.2.0
+  #       with:
+  #         miniforge-variant: Mambaforge
+  #         miniforge-version: latest
+  #         use-mamba: true
+  #         channel-priority: strict
+  #         environment-file: binder/environment.yml
+  #         activate-environment: dask-tutorial-advanced
+  #         auto-activate-base: false
