@@ -32,6 +32,6 @@ jobs:
           miniforge-version: latest
           use-mamba: true
           channel-priority: strict
-          environment-file: binder/environment.yml
+          environment-file: environment.yml
           activate-environment: dask-tutorial-advanced
           auto-activate-base: false

@@ -36,7 +36,7 @@ packages via:
 
 ```terminal
 cd dask-tutorial-advanced
-conda env create --file binder/environment.yml
+conda env create --file environment.yml
 ```
 
 This will create a new conda environment named "dask-tutorial-advanced".
