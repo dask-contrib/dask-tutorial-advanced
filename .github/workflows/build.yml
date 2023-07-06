@@ -5,16 +5,6 @@ on:
   workflow_dispatch:
 
 jobs:
-  binder:
-    runs-on: ubuntu-latest
-    steps:
-
-    - name: Build and cache on mybinder.org
-      uses: jupyterhub/repo2docker-action@master
-      with:
-        NO_PUSH: true
-        MYBINDERORG_TAG: ${{ github.event.ref }}
-
   conda-solve:
     runs-on: ${{ matrix.os }}
     strategy:
@@ -32,6 +22,6 @@ jobs:
           miniforge-version: latest
           use-mamba: true
           channel-priority: strict
-          environment-file: binder/environment.yml
+          environment-file: environment.yml
           activate-environment: dask-tutorial-advanced
           auto-activate-base: false
