@@ -5,16 +5,6 @@ on:
   workflow_dispatch:
 
 jobs:
-  binder:
-    runs-on: ubuntu-latest
-    steps:
-
-    - name: Build and cache on mybinder.org
-      uses: jupyterhub/repo2docker-action@master
-      with:
-        NO_PUSH: true
-        MYBINDERORG_TAG: ${{ github.event.ref }}
-
   conda-solve:
     runs-on: ${{ matrix.os }}
     strategy:
