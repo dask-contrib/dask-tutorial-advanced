@@ -1,4 +1,4 @@
-dask==2023.7.1
+dask==2023.7.0
 ipycytoscape  # Not using `python-graphviz` here
 imageio
 scipy

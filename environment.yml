@@ -3,7 +3,7 @@ channels:
   - conda-forge
 dependencies:
   - python=3.11
-  - dask=2023.7.1
+  - dask=2023.7.0
   - python-graphviz
   - imageio
   - scipy
