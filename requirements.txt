@@ -1,12 +1,12 @@
-dask=2023.7.1
+dask==2023.7.1
 ipycytoscape  # Not using `python-graphviz` here
 imageio
 scipy
 matplotlib
 pip
-pyarrow=12
-s3fs=2023.6.0
-coiled=0.8.3
+pyarrow==12
+s3fs==2023.6.0
+coiled==0.8.3
 # JupyterLab + extensions
 jupyterlab>=3,<4
 dask-labextension
