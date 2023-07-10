@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  conda-solve:
+  conda:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -13,7 +13,7 @@ jobs:
 
     steps:
       - name: Checkout source
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Setup Conda Environment
         uses: conda-incubator/setup-miniconda@v2.2.0
@@ -25,3 +25,19 @@ jobs:
           environment-file: environment.yml
           activate-environment: dask-tutorial-advanced
           auto-activate-base: false
+  
+  pip:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [windows-latest, ubuntu-latest, macos-latest]
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v3
+
+      - uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+
+      - run: pip install -r requirements.txt
