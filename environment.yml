@@ -3,15 +3,15 @@ channels:
   - conda-forge
 dependencies:
   - python=3.11
-  - dask=2023.6.1
+  - dask=2023.7.0
   - python-graphviz
   - imageio
   - scipy
   - matplotlib
   - pip
-  - pyarrow
-  - s3fs
-  - coiled
+  - pyarrow=12
+  - s3fs=2023.6.0
+  - coiled=0.8.3
   # JupyterLab + extensions
   - jupyterlab>=3,<4
   - dask-labextension
