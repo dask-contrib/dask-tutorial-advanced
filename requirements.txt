@@ -7,6 +7,7 @@ pip
 pyarrow==12
 s3fs==2023.6.0
 coiled==0.8.3
+gilknocker
 # JupyterLab + extensions
 jupyterlab>=3,<4
 dask-labextension
