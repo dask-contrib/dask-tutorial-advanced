@@ -47,3 +47,12 @@ Finally, launch JupyterLab with:
 ```
 jupyter lab
 ```
+
+### Instructions for Notebook 4
+
+We will be launching the last notebook on the cloud and creating bigger clusters. From a terminal where you have the `dask-tutorial-advanced` environment activated:
+
+```
+coiled login --token f5924259c2b04a54a8f25a1e07941177-bed7217e66f325cdd64c69d4c63e2a893dc02b86 --account dask-tutorials
+coiled notebook start --software dask-tutorial-advanced
+```
